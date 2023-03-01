@@ -1,0 +1,354 @@
+$white-font: #ffffff;
+$darkl-font1: #000000;
+$dark-font2: #333333;
+$grey-font: #828282;
+
+$shade-grey: #efefef;
+$shade-white: #ffffff;
+$borders-green: #66c05d;
+
+%btncover {
+    border: 2px solid $borders-green;
+    border-radius: 20px;
+    background-color: transparent;
+    padding: 10px 15px;
+}
+
+%trbuttom {
+    transition: 0.2s ease;
+}
+
+@mixin fontz($fc, $fn) {
+    font-size: $fc;
+    font-weight: $fn;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: $shade-grey;
+    color: $darkl-font1;
+    font-size: 14px;
+}
+
+.header {
+    background-color: $shade-white;
+    padding-top: 0px;
+}
+
+.wrapper {
+    max-width: 1110px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 4px 0;
+    li {
+        align-self: center;
+        margin-left: 15px;
+        margin-right: 15px;
+        a {
+            text-decoration: none;
+            color: $darkl-font1;
+        }
+    }
+}
+
+hr {
+    border: none;
+    background-color: $shade-grey;
+    height: 1px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 19px 0;
+    padding-bottom: 0px;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        color: $borders-green;
+        @include fontz(36px, 700);
+        letter-spacing: 3px;
+    }
+}
+
+.logo-image {
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url(../img/logo/logo.svg.svg);
+    margin-right: 19px;
+    margin-left: 0px;
+}
+
+.header-info {
+    span {
+        font-size: 16px;
+        margin-right: 40px;
+    }
+    button {
+        font-size: 14px;
+        @extend %btncover;
+        padding: 10px 24px;
+        margin-right: 0px;
+        @extend %trbuttom;
+        &:hover {
+            background-color: $borders-green;
+            color: whitesmoke;
+        }
+    }
+}
+
+.header-button {
+    padding: 15px 0 20px 0;
+    font-size: 16px;
+    margin: 0;
+    .nav {
+        li {
+            margin-right: 20px;
+            margin-left: 21px;
+        }
+    }
+}
+
+.banner {
+    background-image: url(../img/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 148px;
+    padding-bottom: 198px;
+    color: $white-font;
+    p {
+        margin-bottom: 64px;
+        height: 35px;
+        max-width: 315;
+        line-height: 1.5;
+        margin-left: -14px;
+    }
+}
+
+.title {
+    @include fontz(48px, 700);
+    margin-left: -3px;
+    margin-bottom: 37px;
+}
+
+.btn {
+    color: $white-font;
+    text-decoration: none;
+    @extend %btncover;
+    border: 2px solid $shade-white;
+    padding: 10px 47px;
+    margin-left: -4px;
+    @extend %trbuttom;
+    &:hover {
+        background-color: $shade-white;
+        color: $darkl-font1;
+    }
+}
+
+.catalog {
+    padding-top: 85px;
+    padding-bottom: 133px;
+}
+
+.bg-green {
+    background-color: $borders-green;
+    color: $shade-white;
+    padding: 50px 39px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+        @include fontz(18px, 700);
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    input {
+        font-size: 14px;
+        border: 1px solid $shade-white;
+        border-radius: 20px;
+        padding: 10px 15px;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 227px;
+    }
+    .btn {
+        display: block;
+        text-align: center;
+        max-width: 166px;
+        padding: 9px 0;
+    }
+    p {
+        line-height: 1.5;
+        margin-bottom: 23px;
+    }
+}
+
+.bg-green-item {
+    flex: 0 0 55%;
+}
+
+.bg-green-img {
+    flex: 0 0 30%;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1px 30px;
+    margin-left: -6px;
+}
+
+.grid-item-title {
+    grid-column: 1/4;
+    grid-row: 1/2;
+    .title-h2 {
+        @include fontz(24px, 700);
+    }
+}
+
+.grid-item-img {
+    grid-column: 4/5;
+    grid-row: 1/2;
+    text-align: center;
+}
+
+.grid-item-left {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    margin-top: 80px;
+}
+
+.grid-item-right {
+    grid-column: 3/5;
+    grid-row: 3/4;
+    margin-top: 80px;
+}
+
+.grid-item-catalog {
+    text-align: center;
+    .bg-white {
+        background-color: $shade-white;
+        padding: 23px 30px 40px 30px;
+    }
+}
+
+.grid-title {
+    line-height: 1.5;
+}
+
+.grid-price {
+    @include fontz(21px, 500);
+    margin-top: 0px;
+    letter-spacing: 1px;
+    margin-bottom: 21px;
+}
+
+.grid-btn {
+    @extend %btncover;
+    border-radius: 30px;
+    background-color: $borders-green;
+    color: $shade-white;
+    text-decoration: none;
+    @extend %trbuttom;
+    cursor: pointer;
+    padding: 7px 40px;
+}
+
+.thumb {
+    margin-bottom: 16px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    color: $grey-font;
+    padding: 28px 0;
+    font-size: 12px;
+    p {
+        margin: 0;
+    }
+    a {
+        color: $grey-font;
+        text-decoration: none;
+    }
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 20px;
+}
+
+.footer-info {
+    display: flex;
+    align-items: center;
+    span {
+        font-size: 16px;
+        margin-left: 67px;
+        margin-right: 39px;
+        &:first-child {
+            font-size: 14px;
+            margin-left: 0;
+        }
+    }
+    button {
+        font-size: 14px;
+        @extend %btncover;
+        padding: 10px 24px;
+        margin-right: 0px;
+        @extend %trbuttom;
+        &:hover {
+            background-color: $borders-green;
+            color: whitesmoke;
+        }
+    }
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding-left: 0;
+    .social-item {
+        margin-right: 20px;
+    }
+    .social-link {
+        display: block;
+        width: 45px;
+        height: 40px;
+        border: 2px solid $borders-green;
+        border-radius: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+
+.social-youtube {
+    background-image: url(../img/youtube.svg);
+}
+
+.social-vk {
+    background-image: url(../img/vk.svg);
+}
+
+.social-fb {
+    background-image: url(../img/facebook.svg);
+}
+
+.social-instagram {
+    background-image: url(../img/instagram.svg);
+}
